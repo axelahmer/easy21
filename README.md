@@ -25,7 +25,7 @@ alpha = 0.01
 
 Q: What are the pros and cons of bootstrapping in Easy21?
 
-A: TODO
+A: 
 
 Q: Would you expect bootstrapping to help more in blackjack or Easy21? Why?
 

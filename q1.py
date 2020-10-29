@@ -1,6 +1,6 @@
 from utils import plot_values, state_action_map, state_map, sample_episode, e_greedy
 
-NUM_EPISODES = 50_000
+NUM_EPISODES = 100_000
 
 
 def monte_carlo_online_control(num_episodes=NUM_EPISODES):

@@ -5,8 +5,8 @@ from q1 import monte_carlo_online_control
 from utils import state_action_map, state_map, get_e_greedy_action
 from utils import ACTIONS, DEALER_RANGE, PLAYER_RANGE
 
-MC_Q_STAR_EPISODES = 5_000
-
+MC_Q_STAR_EPISODES = 100_000
+NUM_EPISODES = 1_000
 
 def calc_mse(Q, Qstar):
     return sum([(Q[sa] - Qstar[sa]) ** 2 for sa in Qstar.keys()]) / len(Qstar.keys())
@@ -72,5 +72,5 @@ def plot_mse_over_episodes(lambdas: list, num_episodes: int, Qstar):
 
 if __name__ == '__main__':
     Qstar = monte_carlo_online_control(MC_Q_STAR_EPISODES)
-    plot_mse_lambdas(11, 1000, Qstar)
-    plot_mse_over_episodes([0, 1], 1000, Qstar)
+    plot_mse_lambdas(11, NUM_EPISODES, Qstar)
+    plot_mse_over_episodes([0, 1], NUM_EPISODES, Qstar)

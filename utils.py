@@ -25,7 +25,11 @@ def plot_values(Q):
 
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
+    ax.set_xlabel("dealer card")
+    ax.set_ylabel("player sum")
+    ax.set_zlabel("V*")
     ax.plot_trisurf(D, P, MQ)
+
     plt.show()
 
 

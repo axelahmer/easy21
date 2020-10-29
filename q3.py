@@ -5,7 +5,7 @@ from q1 import monte_carlo_online_control
 from utils import state_action_map, state_map
 from utils import ACTIONS, DEALER_RANGE, PLAYER_RANGE
 
-MC_Q_STAR_EPISODES = 1_000
+MC_Q_STAR_EPISODES = 100_000
 NUM_EPISODES = 1000
 ALPHA = 0.01
 EPSILON = 0.05

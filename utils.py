@@ -28,7 +28,7 @@ def plot_values(Q):
     ax.set_xlabel("dealer card")
     ax.set_ylabel("player sum")
     ax.set_zlabel("V*")
-    ax.plot_trisurf(D, P, MQ)
+    ax.plot_trisurf(D, P, MQ, cmap="seismic")
 
     plt.show()
 

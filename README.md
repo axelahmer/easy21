@@ -23,10 +23,15 @@ alpha = 0.01
 
 ## Discussion
 
-Q: What are the pros and cons of bootstrapping in Easy21?
+_What are the pros and cons of bootstrapping in Easy21?_
 
-A: 
+Bootstrapping allows policy iteration to be done on every time step within a trajectory by using value estimates of 
+future states as opposed to the true result from reaching the terminal state. Bootstrapping also avoids propagating 
+large terminal rewards to episode state values which cause an initially high mean squared error (see TD learning image 2). The main downside to 
+bootstrapping is using a biased estimate of value, although it will still converge to true value in the limit.
 
-Q: Would you expect bootstrapping to help more in blackjack or Easy21? Why?
+_Would you expect bootstrapping to help more in blackjack or Easy21? Why?_
 
-A: TODO
+As cards can have negative values in Easy21 unlike in regular blackjack, episodes can be longer in length.
+Therefore the benefit of bootstrapping is greater when applied to Easy21, as not bootstrapping allows the reward of 
+long episodes to be propagated back to all states within the episode, despite each state being only loosely connected.

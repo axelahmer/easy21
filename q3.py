@@ -40,10 +40,6 @@ def q_hat(state: State, action: Action, w):
     return np.dot(phi(state, action), w)
 
 
-def v_star(state: State, w):
-    return max([q_hat(state, a, w) for a in ACTIONS])
-
-
 def calc_mse_linear(w, Qstar):
     return sum([(q_hat(State(d, p), a, w) - Qstar[(d, p), a]) ** 2 for (d, p), a in Qstar.keys()]) / len(Qstar.keys())
 
@@ -67,9 +63,6 @@ def sarsa(lamb: int, num_episodes: int, Qstar, record=False):
     alpha = ALPHA
     w = np.zeros(36)
     # w = np.random.uniform(-1, 1, 36)
-    Q = state_action_map(plus=True)
-    N = state_action_map()
-    N_s = state_map(plus=True)
     mses = []
     for k in range(num_episodes):
         E = np.zeros(36)
